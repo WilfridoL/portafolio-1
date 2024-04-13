@@ -1,0 +1,109 @@
+@use 'variable.scss';
+
+@mixin flex-flow() {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+body {
+  // width: 100%;
+  // height: 100%;
+  background-color: variable.$background;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  color: variable.$black-500;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  @include flex-flow();
+  font-size: 14px;
+  gap: 16px;
+  padding: 20px 16px;
+  
+  // menu
+
+  .menu_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      width: 35px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .links {
+      display: flex;
+      gap: 32px;
+
+      li:nth-child(1),
+      li:nth-child(2),
+      li:nth-child(3),
+      li:nth-child(4),
+      li:nth-child(5) {
+        display: none;
+      }
+    }
+  }
+
+  // contenido
+
+  .contenido {
+    @include flex-flow();
+    gap: 16px;
+
+    // home
+
+    .home {
+      width: 100%;
+      gap: 16px;
+      @include flex-flow();
+
+      .home__img_personal {
+        width: 98px;
+        height: 98px;
+        display: flex;
+        order: 1;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .home__title_text {
+        order: 2;
+        @include flex-flow();
+        gap: 16px;
+
+        h1 {
+          font-weight: bold;
+          font-size: 22px;
+        }
+
+        .home_links_redes {
+          display: flex;
+          gap: 8px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    // sobre mi
+
+    .about-me {
+      // width: calc(100% + 32px);
+      background: variable.$blue-200;
+    }
+  }
+}

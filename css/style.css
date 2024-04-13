@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  color: #464646;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  font-size: 14px;
+  gap: 16px;
+  padding: 20px 16px;
+}
+.container .menu_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .menu_container .logo {
+  width: 35px;
+  overflow: hidden;
+}
+.container .menu_container .logo img {
+  width: 100%;
+}
+.container .menu_container .links {
+  display: flex;
+  gap: 32px;
+}
+.container .menu_container .links li:nth-child(1),
+.container .menu_container .links li:nth-child(2),
+.container .menu_container .links li:nth-child(3),
+.container .menu_container .links li:nth-child(4),
+.container .menu_container .links li:nth-child(5) {
+  display: none;
+}
+.container .contenido {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 16px;
+}
+.container .contenido .home {
+  width: 100%;
+  gap: 16px;
+  display: flex;
+  flex-flow: column wrap;
+}
+.container .contenido .home .home__img_personal {
+  width: 98px;
+  height: 98px;
+  display: flex;
+  order: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.container .contenido .home .home__img_personal img {
+  width: 100%;
+}
+.container .contenido .home .home__title_text {
+  order: 2;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 16px;
+}
+.container .contenido .home .home__title_text h1 {
+  font-weight: bold;
+  font-size: 22px;
+}
+.container .contenido .home .home__title_text .home_links_redes {
+  display: flex;
+  gap: 8px;
+  font-weight: 700;
+}
+.container .contenido .about-me {
+  background: #EDEDED;
+}
+
+/*# sourceMappingURL=style.css.map */
