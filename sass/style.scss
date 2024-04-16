@@ -1,109 +1,175 @@
 @use 'variable.scss';
 
-@mixin flex-flow() {
+@mixin flex-wrap() {
   display: flex;
-  flex-flow: column wrap;
+  flex-wrap: wrap;
 }
 
+@mixin title-section($s, $w){
+  font-size: $s;
+  font-weight: $w;
+}
+
+// *{
+//   margin: 0;
+//   padding: 0;
+// }
+
 body {
-  // width: 100%;
-  // height: 100%;
-  background-color: variable.$background;
-  display: flex;
-  justify-content: center;
+  width: auto;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
   position: relative;
   font-family: "Raleway", sans-serif;
+  background-color: variable.$background;
   color: variable.$black-500;
-  overflow-x: hidden;
 }
 
 .container {
+  overflow: hidden;
   width: 100%;
-  @include flex-flow();
   font-size: 14px;
-  gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;  
+}
+
+// menu
+
+.menu_container {
+  width: 100%;
   padding: 20px 16px;
-  
-  // menu
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  .menu_container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .logo {
+    width: 35px;
+    overflow: hidden;
 
-    .logo {
-      width: 35px;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .links {
-      display: flex;
-      gap: 32px;
-
-      li:nth-child(1),
-      li:nth-child(2),
-      li:nth-child(3),
-      li:nth-child(4),
-      li:nth-child(5) {
-        display: none;
-      }
+    img {
+      width: 100%;
     }
   }
 
-  // contenido
+  .links {
+    display: flex;
+    gap: 32px;
 
-  .contenido {
-    @include flex-flow();
+    li:nth-child(1),
+    li:nth-child(2),
+    li:nth-child(3),
+    li:nth-child(4),
+    li:nth-child(5) {
+      display: none;
+    }
+  }
+}
+
+// contenido
+
+.contenido {
+  @include flex-wrap();
+  gap: 16px;  
+}
+    
+// home
+
+.home {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0px 16px;
+
+  .home__img_personal {
+    width: 98px;
+    height: 98px;
+    display: flex;
+    order: 1;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      }
+    }
+
+  .home__title_text {
+    order: 2;
+    @include flex-wrap();
     gap: 16px;
 
-    // home
-
-    .home {
-      width: 100%;
-      gap: 16px;
-      @include flex-flow();
-
-      .home__img_personal {
-        width: 98px;
-        height: 98px;
-        display: flex;
-        order: 1;
-        border-radius: 50%;
-        overflow: hidden;
-
-        img {
-          width: 100%;
-        }
-      }
-
-      .home__title_text {
-        order: 2;
-        @include flex-flow();
-        gap: 16px;
-
-        h1 {
-          font-weight: bold;
-          font-size: 22px;
-        }
-
-        .home_links_redes {
-          display: flex;
-          gap: 8px;
-          font-weight: 700;
-        }
-      }
+    h1 {
+      @include title-section(22px, bold)
     }
 
-    // sobre mi
+    .home_links_redes {
+      display: flex;
+      gap: 8px;
+      font-weight: 700;
+      }
+    }
+}
+// sobre mi
 
-    .about-me {
-      // width: calc(100% + 32px);
-      background: variable.$blue-200;
+.about-me {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: variable.$blue-200;
+  h2{
+    @include title-section(22px, bold)
+  }
+}
+
+// skills
+
+.skills,
+.hobbies{
+  width: 100%;
+  text-align: center;
+  h2{
+    @include title-section(22px, bold);
+    margin-bottom: 32px;
+  }
+  .lenguaje__container,
+  .hobbies__container{
+    display: flex;
+    flex-grow: 1;
+    flex-flow: wrap;
+    justify-content: center;
+    padding: 0px 16px;
+    gap: 32px 16px;
+    .lenguajes,
+    .content{
+      width: 100px;
+      height: 118px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: end;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 16px;
+      background: variable.$white;
+      color: variable.$blue-300;
+      .lenguaje__icon,
+      .hobbie__icon{
+        font-size: 32px;
+        margin-bottom: 8px;
+      }
+      p{
+        @include title-section(16px, bold);
+        text-wrap: nowrap;
+      }
     }
   }
+}
+
+.hobbies{
+  margin: 16px 0px;
 }

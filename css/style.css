@@ -1,58 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 body {
-  background-color: #FFFFFF;
-  display: flex;
-  justify-content: center;
+  width: auto;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
   position: relative;
   font-family: "Raleway", sans-serif;
+  background-color: #EDEDED;
   color: #464646;
-  overflow-x: hidden;
 }
 
 .container {
+  overflow: hidden;
   width: 100%;
-  display: flex;
-  flex-flow: column wrap;
   font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
-  padding: 20px 16px;
 }
-.container .menu_container {
+
+.menu_container {
   width: 100%;
+  padding: 20px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.container .menu_container .logo {
+.menu_container .logo {
   width: 35px;
   overflow: hidden;
 }
-.container .menu_container .logo img {
+.menu_container .logo img {
   width: 100%;
 }
-.container .menu_container .links {
+.menu_container .links {
   display: flex;
   gap: 32px;
 }
-.container .menu_container .links li:nth-child(1),
-.container .menu_container .links li:nth-child(2),
-.container .menu_container .links li:nth-child(3),
-.container .menu_container .links li:nth-child(4),
-.container .menu_container .links li:nth-child(5) {
+.menu_container .links li:nth-child(1),
+.menu_container .links li:nth-child(2),
+.menu_container .links li:nth-child(3),
+.menu_container .links li:nth-child(4),
+.menu_container .links li:nth-child(5) {
   display: none;
 }
-.container .contenido {
+
+.contenido {
   display: flex;
-  flex-flow: column wrap;
+  flex-wrap: wrap;
   gap: 16px;
 }
-.container .contenido .home {
+
+.home {
   width: 100%;
-  gap: 16px;
   display: flex;
-  flex-flow: column wrap;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0px 16px;
 }
-.container .contenido .home .home__img_personal {
+.home .home__img_personal {
   width: 98px;
   height: 98px;
   display: flex;
@@ -60,26 +68,112 @@ body {
   border-radius: 50%;
   overflow: hidden;
 }
-.container .contenido .home .home__img_personal img {
+.home .home__img_personal img {
   width: 100%;
 }
-.container .contenido .home .home__title_text {
+.home .home__title_text {
   order: 2;
   display: flex;
-  flex-flow: column wrap;
+  flex-wrap: wrap;
   gap: 16px;
 }
-.container .contenido .home .home__title_text h1 {
-  font-weight: bold;
+.home .home__title_text h1 {
   font-size: 22px;
+  font-weight: bold;
 }
-.container .contenido .home .home__title_text .home_links_redes {
+.home .home__title_text .home_links_redes {
   display: flex;
   gap: 8px;
   font-weight: 700;
 }
-.container .contenido .about-me {
-  background: #EDEDED;
+
+.about-me {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #EAF2FD;
+}
+.about-me h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.skills,
+.hobbies {
+  width: 100%;
+  text-align: center;
+}
+.skills h2,
+.hobbies h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+.skills .lenguaje__container,
+.skills .hobbies__container,
+.hobbies .lenguaje__container,
+.hobbies .hobbies__container {
+  display: flex;
+  flex-grow: 1;
+  flex-flow: wrap;
+  justify-content: center;
+  padding: 0px 16px;
+  gap: 32px 16px;
+}
+.skills .lenguaje__container .lenguajes,
+.skills .lenguaje__container .content,
+.skills .hobbies__container .lenguajes,
+.skills .hobbies__container .content,
+.hobbies .lenguaje__container .lenguajes,
+.hobbies .lenguaje__container .content,
+.hobbies .hobbies__container .lenguajes,
+.hobbies .hobbies__container .content {
+  width: 100px;
+  height: 118px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 16px;
+  background: #FFFFFF;
+  color: #2A7AE4;
+}
+.skills .lenguaje__container .lenguajes .lenguaje__icon,
+.skills .lenguaje__container .lenguajes .hobbie__icon,
+.skills .lenguaje__container .content .lenguaje__icon,
+.skills .lenguaje__container .content .hobbie__icon,
+.skills .hobbies__container .lenguajes .lenguaje__icon,
+.skills .hobbies__container .lenguajes .hobbie__icon,
+.skills .hobbies__container .content .lenguaje__icon,
+.skills .hobbies__container .content .hobbie__icon,
+.hobbies .lenguaje__container .lenguajes .lenguaje__icon,
+.hobbies .lenguaje__container .lenguajes .hobbie__icon,
+.hobbies .lenguaje__container .content .lenguaje__icon,
+.hobbies .lenguaje__container .content .hobbie__icon,
+.hobbies .hobbies__container .lenguajes .lenguaje__icon,
+.hobbies .hobbies__container .lenguajes .hobbie__icon,
+.hobbies .hobbies__container .content .lenguaje__icon,
+.hobbies .hobbies__container .content .hobbie__icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.skills .lenguaje__container .lenguajes p,
+.skills .lenguaje__container .content p,
+.skills .hobbies__container .lenguajes p,
+.skills .hobbies__container .content p,
+.hobbies .lenguaje__container .lenguajes p,
+.hobbies .lenguaje__container .content p,
+.hobbies .hobbies__container .lenguajes p,
+.hobbies .hobbies__container .content p {
+  font-size: 16px;
+  font-weight: bold;
+  text-wrap: nowrap;
+}
+
+.hobbies {
+  margin: 16px 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
