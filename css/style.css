@@ -169,11 +169,186 @@ body {
 .hobbies .hobbies__container .content p {
   font-size: 16px;
   font-weight: bold;
-  text-wrap: nowrap;
+  text-align: left;
 }
 
 .hobbies {
   margin: 16px 0px;
+}
+
+.training {
+  width: 100%;
+  background: #EAF2FD;
+  text-align: center;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+.training h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.training .formaciones__container {
+  display: flex;
+  flex-grow: 1;
+  flex-flow: wrap;
+  justify-content: center;
+  padding: 0px 16px;
+  gap: 16px;
+}
+.training .formaciones__container .formacion,
+.training .formaciones__container .project__div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+.training .formaciones__container .formacion .formacion__logo,
+.training .formaciones__container .project__div .formacion__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  background-color: #FFFFFF;
+}
+.training .formaciones__container .formacion .formacion__logo img,
+.training .formaciones__container .project__div .formacion__logo img {
+  width: 100px;
+}
+.training .formaciones__container .formacion .formacion__descripcion,
+.training .formaciones__container .project__div .formacion__descripcion {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: left;
+  gap: 8px;
+}
+.training .formaciones__container .formacion .formacion__descripcion h4,
+.training .formaciones__container .project__div .formacion__descripcion h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.training .formaciones__container .formacion .formacion__descripcion p,
+.training .formaciones__container .project__div .formacion__descripcion p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.project {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 32px;
+}
+.project h2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.project .project__container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.project .project__container .project__div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.project .project__container .project__div .img_project {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project .project__container .project__div .img_project img {
+  width: 100%;
+}
+.project .project__container .project__div .project__description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.project .project__container .project__div .project__description h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.project .project__container .project__div .project__description p {
+  font-size: 14px;
+  font-weight: 600;
+}
+.project .project__container .project__div .project__description .btn__links__project {
+  display: flex;
+  gap: 16px;
+}
+.project .project__container .project__div .project__description .btn__links__project a button {
+  padding: 12px 16px;
+  border: 2px solid #2A7AE4;
+  color: #2A7AE4;
+  font-size: 14px;
+  font-weight: 600;
+}
+.project .project__container .project__div .project__description .btn__links__project a:nth-child(2) button {
+  background: #2A7AE4;
+  color: #FFFFFF;
+}
+
+.contact {
+  width: 100%;
+  background: #EAF2FD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+.contact .contact_img {
+  display: none;
+}
+.contact .formulario h2 {
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.contact .formulario p {
+  font-size: 16px;
+  font-weight: 600;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  gap: 32px;
+  position: relative;
+}
+.contact form .cuadros_de_texto {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 300;
+}
+.contact form .cuadros_de_texto label {
+  position: absolute;
+  left: 12px;
+  pointer-events: none;
+}
+.contact form .cuadros_de_texto input {
+  width: 100%;
+  height: 56px;
+  padding: 0px 12px;
+  border-radius: 4px;
+  border-bottom: 1.5px solid #C8C8C8;
+  outline: none;
+}
+.contact form .cuadros_de_texto input:focus {
+  border-bottom-color: #2A7AE4;
+}
+.contact form .cuadros_de_texto textarea {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

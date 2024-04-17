@@ -5,7 +5,7 @@
   flex-wrap: wrap;
 }
 
-@mixin title-section($s, $w){
+@mixin title-section($s, $w) {
   font-size: $s;
   font-weight: $w;
 }
@@ -34,7 +34,7 @@ body {
   font-size: 14px;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;  
+  gap: 16px;
 }
 
 // menu
@@ -73,9 +73,9 @@ body {
 
 .contenido {
   @include flex-wrap();
-  gap: 16px;  
+  gap: 16px;
 }
-    
+
 // home
 
 .home {
@@ -95,8 +95,8 @@ body {
 
     img {
       width: 100%;
-      }
     }
+  }
 
   .home__title_text {
     order: 2;
@@ -111,9 +111,10 @@ body {
       display: flex;
       gap: 8px;
       font-weight: 700;
-      }
     }
+  }
 }
+
 // sobre mi
 
 .about-me {
@@ -122,31 +123,35 @@ body {
   flex-direction: column;
   gap: 16px;
   background: variable.$blue-200;
-  h2{
+
+  h2 {
     @include title-section(22px, bold)
   }
 }
 
-// skills
+// skills & hobbies
 
 .skills,
-.hobbies{
+.hobbies {
   width: 100%;
   text-align: center;
-  h2{
+
+  h2 {
     @include title-section(22px, bold);
     margin-bottom: 32px;
   }
+
   .lenguaje__container,
-  .hobbies__container{
+  .hobbies__container {
     display: flex;
     flex-grow: 1;
     flex-flow: wrap;
     justify-content: center;
     padding: 0px 16px;
     gap: 32px 16px;
+
     .lenguajes,
-    .content{
+    .content {
       width: 100px;
       height: 118px;
       flex-grow: 1;
@@ -157,19 +162,214 @@ body {
       padding: 16px;
       background: variable.$white;
       color: variable.$blue-300;
+
       .lenguaje__icon,
-      .hobbie__icon{
+      .hobbie__icon {
         font-size: 32px;
         margin-bottom: 8px;
       }
-      p{
+
+      p {
         @include title-section(16px, bold);
-        text-wrap: nowrap;
+        text-align: left;
       }
     }
   }
 }
 
-.hobbies{
+.hobbies {
   margin: 16px 0px;
+}
+
+// formación
+
+.training {
+  width: 100%;
+  background: variable.$blue-200;
+  text-align: center;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+
+  h2 {
+    @include title-section(22px, bold);
+  }
+
+  .formaciones__container {
+    display: flex;
+    flex-grow: 1;
+    flex-flow: wrap;
+    justify-content: center;
+    padding: 0px 16px;
+    gap: 16px;
+
+    .formacion,
+    .project__div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 8px;
+
+      .formacion__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 120px;
+        background-color: variable.$white;
+
+        img {
+          width: 100px;
+        }
+      }
+
+      .formacion__descripcion {
+        display: flex;
+        flex-flow: column wrap;
+        text-align: left;
+        gap: 8px;
+
+        h4 {
+          @include title-section(16px, bold);
+        }
+
+        p {
+          @include title-section(14px, 600)
+        }
+      }
+    }
+  }
+}
+
+// proyectos
+
+.project {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 32px;
+
+  h2 {
+    @include title-section(22px, bold);
+    text-align: center;
+  }
+
+  .project__container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    .project__div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .img_project {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .project__description {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h4 {
+          @include title-section(16px, bold);
+        }
+
+        p {
+          @include title-section(14px, 600);
+        }
+
+        .btn__links__project {
+          display: flex;
+          gap: 16px;
+
+          a {
+            button {
+              padding: 12px 16px;
+              border: 2px solid variable.$blue-300;
+              color: variable.$blue-300;
+              @include title-section(14px, 600);
+            }
+          }
+
+          a:nth-child(2) {
+            button {
+              background: variable.$blue-300;
+              color: variable.$white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  width: 100%;
+  background: variable.$blue-200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+
+  .contact_img {
+    display: none;
+  }
+
+  .formulario {
+    h2 {
+      margin-bottom: 8px;
+      @include title-section(22px, bold);
+    }
+    p{
+      @include title-section(16px, 600);
+    }
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 32px;
+    position: relative;
+    .cuadros_de_texto{
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      @include title-section(16px, 300);
+      label{
+        position: absolute;
+        left: 12px;
+        pointer-events: none;
+      }
+      input{
+        width: 100%;
+        height: 56px;
+        padding: 0px 12px;
+        border-radius: 4px;
+        border-bottom: 1.5px solid variable.$black-200;
+        outline: none;
+      }
+
+      input:focus{
+        border-bottom-color: variable.$blue-300;
+      }
+
+      textarea{
+        width: 100%;
+      }
+    }
+  }
 }
