@@ -18,7 +18,6 @@ body {
   font-size: 14px;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
 }
 
 .menu_container {
@@ -51,12 +50,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  margin-top: 16px;
 }
 
 .home {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 16px;
   padding: 0px 16px;
 }
@@ -170,6 +170,7 @@ body {
   font-size: 16px;
   font-weight: bold;
   text-align: left;
+  color: #464646;
 }
 
 .hobbies {
@@ -335,6 +336,7 @@ body {
   position: absolute;
   left: 12px;
   pointer-events: none;
+  transition: all 0.3s ease;
 }
 .contact form .cuadros_de_texto input {
   width: 100%;
@@ -343,12 +345,143 @@ body {
   border-radius: 4px;
   border-bottom: 1.5px solid #C8C8C8;
   outline: none;
+  font-size: 15px;
 }
-.contact form .cuadros_de_texto input:focus {
+.contact form .cuadros_de_texto input:focus,
+.contact form .cuadros_de_texto input:not(:placeholder-shown),
+.contact form .cuadros_de_texto textarea:focus,
+.contact form .cuadros_de_texto textarea:not(:placeholder-shown) {
   border-bottom-color: #2A7AE4;
+}
+.contact form .cuadros_de_texto input:focus + label,
+.contact form .cuadros_de_texto input:not(:placeholder-shown) + label,
+.contact form .cuadros_de_texto textarea:focus + label[for=mensaje],
+.contact form .cuadros_de_texto textarea:not(:placeholder-shown) + label[for=mensaje] {
+  transform: translateY(-100%);
+  font-size: 12px;
+  color: #2A7AE4;
+}
+.contact form .cuadros_de_texto label[for=mensaje] {
+  top: 16px;
 }
 .contact form .cuadros_de_texto textarea {
   width: 100%;
+  min-height: 133px;
+  padding: 16px;
+  border-radius: 4px;
+  border-bottom: 1.5px solid #C8C8C8;
+  outline: none;
+}
+.contact form .enviar {
+  text-align: center;
+  padding: 12px 16px;
+  background: #2A7AE4;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  border-radius: 4px;
+}
+.contact form .enviar:hover {
+  transform: scale(0.98);
+}
+
+footer {
+  width: 100%;
+  background: #FFFFFF;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .menu_container {
+    font-size: 18px;
+  }
+  .menu_container .logo {
+    width: 45px;
+  }
+  .menu_container .links li:nth-child(6) {
+    font-weight: bold;
+  }
+  .home {
+    width: 100%;
+    flex-direction: row;
+  }
+  .home .home__img_personal {
+    width: 146px;
+    height: 146px;
+    flex-shrink: 0;
+    order: 2;
+  }
+  .home .home__title_text {
+    order: 1;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .home .home__title_text h1 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .home .home__title_text .home_links_redes {
+    display: flex;
+  }
+  .menu_container,
+  .about-me {
+    padding: 20px 32px;
+  }
+  .home,
+  .skills,
+  .hobbies {
+    padding: 0px 32px;
+  }
+  .skills .lenguaje__container .lenguajes,
+  .skills .lenguaje__container .content,
+  .skills .hobbies__container .lenguajes,
+  .skills .hobbies__container .content,
+  .hobbies .lenguaje__container .lenguajes,
+  .hobbies .lenguaje__container .content,
+  .hobbies .hobbies__container .lenguajes,
+  .hobbies .hobbies__container .content {
+    width: 130px;
+  }
+  .training {
+    width: 100%;
+    background: #EAF2FD;
+    text-align: center;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+  .training h2 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .training .formaciones__container .formacion {
+    width: 118px;
+  }
+  .project .project__container .project__div {
+    gap: 12px;
+  }
+  .contact {
+    align-items: start;
+    justify-content: start;
+  }
+  .contact .formulario {
+    width: 100%;
+  }
+  .contact .formulario form .enviar {
+    width: 133px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
