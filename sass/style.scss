@@ -24,9 +24,22 @@ body {
   line-height: 1;
   position: relative;
   font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
   background-color: variable.$background;
   color: variable.$black-500;
 }
+
+// transisiones de botones y links
+
+button, li,.enviar{
+  transition: all .2s ease;
+  cursor: pointer;
+}
+button:hover, li:hover,.enviar:hover{
+  opacity: 80%;
+}
+
 
 .container {
   overflow: hidden;
@@ -64,6 +77,9 @@ body {
     li:nth-child(4),
     li:nth-child(5) {
       display: none;
+    }
+    li:hover{
+      opacity: 80%;
     }
   }
 }
@@ -411,10 +427,10 @@ body {
       color: variable.$white;
       border-radius: 4px;
     }
-
     .enviar:hover {
       transform: scale(0.98);
     }
+
   }
 }
 
@@ -509,18 +525,6 @@ footer {
   // formación
 
   .training {
-    width: 100%;
-    background: variable.$blue-200;
-    text-align: center;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 32px;
-
-    h2 {
-      @include title-section(22px, bold);
-    }
 
     .formaciones__container {
       .formacion {
@@ -557,6 +561,166 @@ footer {
           padding: 12px 16px;
         }
       }
+    }
+  }
+}
+
+// version desktop
+
+@media (min-width: 1024px) {
+  // menu
+
+  .menu_container {
+    padding: 20px 10%;
+
+    .logo {
+      width: 50px;
+    }
+
+    .links {
+
+      li:nth-child(1),
+      li:nth-child(2),
+      li:nth-child(3),
+      li:nth-child(4),
+      li:nth-child(5) {
+        display: flex;
+      }
+    }
+  }
+
+  // home
+
+  .home {
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+
+    .home__img_personal {
+      width: 320px;
+      height: 320px;
+    }
+
+    .home__title_text {
+      width: 50%;
+      height: 150px;
+    }
+  }
+
+  // sobre mi 
+  .about-me {
+    padding: 64px 10%;
+
+    p {
+      width: 70%;
+    }
+  }
+
+  // skills & hobbies 
+
+  .home,
+  .skills,
+  .hobbies {
+    padding: 0px 10%;
+  }
+
+  .skills,
+  .hobbies {
+
+    .lenguaje__container,
+    .hobbies__container {
+
+      .lenguajes,
+      .content {
+        width: 80px;
+      }
+    }
+  }
+
+  // formación
+
+  .training {
+    padding: 82px 10%;
+
+    .formaciones__container {
+      .formacion {
+        width: 118px;
+
+        .formacion__logo {
+          height: 226px;
+
+          img {
+            width: 136px;
+          }
+        }
+
+        .formacion__descripcion {
+
+          h4 {
+            @include title-section(22px, bold);
+          }
+
+          p {
+            @include title-section(16px, 600)
+          }
+        }
+      }
+    }
+  }
+
+  // proyecto
+
+  .project {
+
+    .project__container {
+      padding: 0px 10%;
+
+      .project__div {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .img_project {
+          width: 80%;
+        }
+
+        .project__description {
+
+          .btn__links__project {
+
+            a {
+              button {
+                text-wrap: nowrap;
+              }
+            }
+          }
+        }
+      }
+
+      .project__div:nth-child(2),
+      .project__div:nth-child(4) {
+        .img_project {
+          order: 2;
+        }
+
+        .project__description {
+          order: 1;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  // contacto
+
+  .contact {
+    padding: 96px 10% 64px 10%;
+    gap: 16px;
+
+    .contact_img {
+      width: 100%;
+      height: 100%;
+      display: flex;
     }
   }
 }

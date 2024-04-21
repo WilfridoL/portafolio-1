@@ -8,8 +8,19 @@ body {
   line-height: 1;
   position: relative;
   font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
   background-color: #EDEDED;
   color: #464646;
+}
+
+button, li, .enviar {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover, li:hover, .enviar:hover {
+  opacity: 80%;
 }
 
 .container {
@@ -44,6 +55,9 @@ body {
 .menu_container .links li:nth-child(4),
 .menu_container .links li:nth-child(5) {
   display: none;
+}
+.menu_container .links li:hover {
+  opacity: 80%;
 }
 
 .contenido {
@@ -448,20 +462,6 @@ footer {
   .hobbies .hobbies__container .content {
     width: 130px;
   }
-  .training {
-    width: 100%;
-    background: #EAF2FD;
-    text-align: center;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 32px;
-  }
-  .training h2 {
-    font-size: 22px;
-    font-weight: bold;
-  }
   .training .formaciones__container .formacion {
     width: 118px;
   }
@@ -481,6 +481,107 @@ footer {
     display: flex;
     justify-content: center;
     padding: 12px 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .menu_container {
+    padding: 20px 10%;
+  }
+  .menu_container .logo {
+    width: 50px;
+  }
+  .menu_container .links li:nth-child(1),
+  .menu_container .links li:nth-child(2),
+  .menu_container .links li:nth-child(3),
+  .menu_container .links li:nth-child(4),
+  .menu_container .links li:nth-child(5) {
+    display: flex;
+  }
+  .home {
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+  }
+  .home .home__img_personal {
+    width: 320px;
+    height: 320px;
+  }
+  .home .home__title_text {
+    width: 50%;
+    height: 150px;
+  }
+  .about-me {
+    padding: 64px 10%;
+  }
+  .about-me p {
+    width: 70%;
+  }
+  .home,
+  .skills,
+  .hobbies {
+    padding: 0px 10%;
+  }
+  .skills .lenguaje__container .lenguajes,
+  .skills .lenguaje__container .content,
+  .skills .hobbies__container .lenguajes,
+  .skills .hobbies__container .content,
+  .hobbies .lenguaje__container .lenguajes,
+  .hobbies .lenguaje__container .content,
+  .hobbies .hobbies__container .lenguajes,
+  .hobbies .hobbies__container .content {
+    width: 80px;
+  }
+  .training {
+    padding: 82px 10%;
+  }
+  .training .formaciones__container .formacion {
+    width: 118px;
+  }
+  .training .formaciones__container .formacion .formacion__logo {
+    height: 226px;
+  }
+  .training .formaciones__container .formacion .formacion__logo img {
+    width: 136px;
+  }
+  .training .formaciones__container .formacion .formacion__descripcion h4 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .training .formaciones__container .formacion .formacion__descripcion p {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .project .project__container {
+    padding: 0px 10%;
+  }
+  .project .project__container .project__div {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .project .project__container .project__div .img_project {
+    width: 80%;
+  }
+  .project .project__container .project__div .project__description .btn__links__project a button {
+    text-wrap: nowrap;
+  }
+  .project .project__container .project__div:nth-child(2) .img_project,
+  .project .project__container .project__div:nth-child(4) .img_project {
+    order: 2;
+  }
+  .project .project__container .project__div:nth-child(2) .project__description,
+  .project .project__container .project__div:nth-child(4) .project__description {
+    order: 1;
+    text-align: left;
+  }
+  .contact {
+    padding: 96px 10% 64px 10%;
+    gap: 16px;
+  }
+  .contact .contact_img {
+    width: 100%;
+    height: 100%;
+    display: flex;
   }
 }
 
